@@ -8,19 +8,19 @@
         <h1>Calculadora</h1>
         
         <form action="controlador" method="POST">
-            <label> interés simple Producido:</label><br> 
-            <input type="text"><br> 
-            
+           
             <label> Capital</label><br> 
-            <input type="text"><br>  
+            $<input type="text" name="capital"><br>  
             
-            <label> Taza de interes anual </label><br> 
-            <input type="text"><br> 
+            <label> Taza de interes anual</label><br> 
+            <input type="text" name="taza">%<br> 
             
             <label> numero de años </label><br> 
-            <input type="text"><br>     
+            <input type="text" name="anos"><br>     
+            
+            <!-- INTERES = CAPITAL X TAZA X AÑOS  -->
             <br>
-            <button type="submit" name="enviar" id="enviar" value="enviar"/> Enviar</button>
+            <button type="submit" name="calcular" id="calcular"/>Calcular</button>
 
         </form>
     </body>
