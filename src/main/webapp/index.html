@@ -7,16 +7,16 @@
     <body>
         <h1>Calculadora</h1>
         
-        <form action="controlador" method="POST">
+        <form action="servlet" method="POST">
            
             <label> Capital</label><br> 
-            $<input type="text" name="capital"><br>  
+            $<input type="number" name="capital" min="0"><br>  
             
             <label> Taza de interes anual</label><br> 
-            <input type="text" name="taza">%<br> 
+            <input type="number" name="taza">%<br> 
             
             <label> numero de años </label><br> 
-            <input type="text" name="anos"><br>     
+            <input type="number" name="anos"><br>     
             
             <!-- INTERES = CAPITAL X TAZA X AÑOS  -->
             <br>

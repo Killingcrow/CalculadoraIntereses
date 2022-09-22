@@ -7,7 +7,6 @@ package Controlador;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,11 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Carlos Lopez
  */
-@WebServlet(name = "controlador", urlPatterns = {"/controlador"})
-public class controlador extends HttpServlet {
+public class servlet extends HttpServlet {
 
-    
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,34 +29,33 @@ public class controlador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-             
-
+        try ( PrintWriter out = response.getWriter()) {
+            
+            
         int capital = Integer.parseInt(request.getParameter("capital"));
-        int taza = Integer.parseInt(request.getParameter("taza"));        
+        double taza = Double.parseDouble(request.getParameter("taza"));        
         int anos = Integer.parseInt(request.getParameter("anos"));
         
         double newTaza = taza/100;
-        double total = capital* anos * newTaza; 
+        double total = capital * newTaza * anos; 
         
         
-        try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet controlador</title>");            
+            out.println("<title>Servlet servlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("El total es: $" + capital + " * " + taza + "% *"+  anos + " = " + String.valueOf(total));
-            
-                       
-            out.println("<h1>Servlet controlador at " + request.getContextPath() + "</h1>");
+            out.println("El interes simple es de: $" + capital + " * " + taza + "% * "+  anos + " = $" + String.valueOf(total));
             out.println("</body>");
             out.println("</html>");
         }
     }
 
+     // → $ 12.500
+     
+     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
