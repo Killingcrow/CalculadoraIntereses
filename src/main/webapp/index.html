@@ -3,25 +3,32 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
+          </head>
     <body>
         <h1>Calculadora</h1>
         
-        <form action="servlet" method="POST">
+            <form action="servlet" method="POST" id="formulario">
            
             <label> Capital</label><br> 
-            $<input type="number" name="capital" min="0"><br>  
+            $<input type="text" name="capital" id="capital"><br>  
             
             <label> Taza de interes anual</label><br> 
-            <input type="number" name="taza">%<br> 
+            <input type="text" name="taza" id="taza">%<br> 
             
             <label> numero de años </label><br> 
-            <input type="number" name="anos"><br>     
+            <input type="text" name="anos" id="anos"><br>     
             
             <!-- INTERES = CAPITAL X TAZA X AÑOS  -->
             <br>
-            <button type="submit" name="calcular" id="calcular"/>Calcular</button>
+            <button type="submit" name="enviar" id="enviar" value="enviar"/> Enviar</button>
 
         </form>
+        
+
+            
+            
     </body>
+    
+   <script src="js/validarIntereses.js" type="text/javascript"></script>
+                
 </html>
